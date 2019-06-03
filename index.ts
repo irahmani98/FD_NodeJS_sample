@@ -10,9 +10,9 @@ router.post('/', (req, res, next) => {
         res.status(200).json({
             statusCode: 200,
             data:  {
-                firstName: rec.substr(0, rec.indexOf(filler1) + 4),  //0,8
-                lastName: rec.substr(rec.indexOf(filler1) + 4, (rec.lastIndexOf(filler2) - 5)), //8, 10
-                clientId: rec.substr(17) 
+                firstName: rec.substr(0, rec.indexOf(filler1)),
+                lastName: rec.substr(rec.indexOf(filler1) + 4, (rec.lastIndexOf(filler2)- (rec.indexOf(filler1) + 4))),
+                clientId: rec.substr(rec.indexOf('999'), 3) + '-' + rec.substr(rec.indexOf('999') + 3)
             }
     }));
        
